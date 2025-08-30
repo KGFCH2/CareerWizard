@@ -1,0 +1,17 @@
+
+{% extends "base.html" %}
+{% block content %}
+<div class="panel">
+  <h2>Reset Password</h2>
+  <form method="post" class="row">
+    <div>
+      <input class="input" required name="username" placeholder="Username">
+      <input class="input" required name="security_answer" placeholder="Security question answer">
+    </div>
+    <div>
+      <input class="input" required name="new_password" type="password" placeholder="New password">
+      <button class="btn" type="submit">Reset</button>
+    </div>
+  </form>
+</div>
+{% endblock %}

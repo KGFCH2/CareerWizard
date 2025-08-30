@@ -1,0 +1,64 @@
+
+{% extends "base.html" %}
+{% block content %}
+<div class="hero">
+  <div class="panel">
+    <h1>Personalized Career & Skills Advisor</h1>
+    <p>Map your skills, discover roles, and get real-time suggestions on what to learn next. Powered by a curated dataset of 650+ role variants & skills.</p>
+
+    <div class="grid3" style="margin-top:12px;">
+      <div class="card">
+        <b>1. Create account</b>
+        <p class="small">Sign up to save your journey and chat with the advisor.</p>
+      </div>
+      <div class="card">
+        <b>2. Add your skills</b>
+        <p class="small">Type a few skills (e.g., Python, Excel, Communication).</p>
+      </div>
+      <div class="card">
+        <b>3. Get career paths</b>
+        <p class="small">Receive tailored roles, skill gaps, and learning links.</p>
+      </div>
+    </div>
+
+    <div class="badges" style="margin-top:12px;">
+      <div class="badge">Dark/Light mode ☀️🌙</div>
+      <div class="badge">Glowing interactive UI</div>
+      <div class="badge">Glassmorphism</div>
+      <div class="badge">Chat support</div>
+      <div class="badge">500+ skills & careers</div>
+    </div>
+
+    <div style="margin-top:14px;">
+      {% if current_user.is_authenticated %}
+        <a class="btn" href="/dashboard">Go to Dashboard</a>
+      {% else %}
+        <a class="btn" href="/signup">Get Started</a>
+        <a class="btn" href="/login">I already have an account</a>
+      {% endif %}
+    </div>
+  </div>
+
+  <div class="hero-img">
+    <div class="pulse"></div>
+    <div style="text-align:center;">
+      <h3 style="margin:0;">Your Career Map</h3>
+      <p class="small">A dynamic path that brightens as you learn.</p>
+      <!-- Simple inline SVG "career image" -->
+      <svg width="260" height="200" viewBox="0 0 260 200">
+        <defs>
+          <linearGradient id="g1" x1="0" x2="1">
+            <stop offset="0%" stop-color="#22d3ee" stop-opacity="0.9"/>
+            <stop offset="100%" stop-color="#8b5cf6" stop-opacity="0.9"/>
+          </linearGradient>
+        </defs>
+        <polyline points="10,180 60,130 110,150 160,90 210,110 250,40"
+          fill="none" stroke="url(#g1)" stroke-width="4"/>
+        <circle cx="60" cy="130" r="6" fill="#22d3ee"/>
+        <circle cx="160" cy="90" r="6" fill="#8b5cf6"/>
+        <circle cx="250" cy="40" r="6" fill="#22d3ee"/>
+      </svg>
+    </div>
+  </div>
+</div>
+{% endblock %}

@@ -1,0 +1,20 @@
+
+{% extends "base.html" %}
+{% block content %}
+<div class="row">
+  <div class="panel">
+    <h2>Login</h2>
+    <form method="post" class="grid3" style="grid-template-columns:1fr;">
+      <input class="input" required name="username" placeholder="Username">
+      <input class="input" required name="password" type="password" placeholder="Password">
+      <button class="btn" type="submit">Login</button>
+      <div class="small"><a href="/forgot">Forgot password?</a></div>
+    </form>
+  </div>
+  <div class="panel">
+    <h3>New here?</h3>
+    <p class="small">Create an account to access your dashboard and chat advisor.</p>
+    <a class="btn" href="/signup">Signup</a>
+  </div>
+</div>
+{% endblock %}
